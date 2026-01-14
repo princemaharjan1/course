@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Nav Test</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="mart1.css" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI", system-ui, sans-serif;
+        transition: background-color 0.3s, color 0.1s, border-color 0.3s;
+      }
+      :root {
+        /* Dark Mode Variables (Default) */
+        --main-bg: #121212;
+        --section-bg: #1e1e1e;
+        --primary-accent: #4caf50;
+        --secondary-accent: #81c784;
+        --main-text: #e0e0e0;
+        --secondary-text: #9e9e9e;
+        --border-color: #2c2c2c;
+        --button-hover: #388e3c;
+        --card-shadow: rgba(0, 0, 0, 0.2);
+        --header-bg: #1e1e1e;
+
+        /* Additional colors */
+        --rating-color: #ffc107;
+        --discount-color: #f44336;
+        --new-color: #2196f3;
+        --popular-color: #ff9800;
+      }
+      body {
+        background-color: var(--main-bg);
+        color: var(--main-text);
+        min-height: 100vh;
+        perspective: 1px;
+        overflow-x: hidden;
+        line-height: 1.6;
+      }
+      .container {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 15px;
+      }
+
+      /* header*/
+      .header {
+        background-color: var(--header-bg);
+        border-bottom: 1px solid var(--border-color);
+        position: sticky;
+        top: 0;
+        z-index: 100;
+      }
+
+      .header-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 0;
+      }
+
+      /* Logo */
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .logo i {
+        font-size: 2rem;
+        color: var(--primary-accent);
+      }
+
+      .logo-text {
+        font-size: 1.8rem;
+        font-weight: bold;
+        color: var(--primary-accent);
+      }
+
+      /* navigation */
+      .nav-list {
+        display: flex;
+        list-style: none;
+        gap: 20px;
+      }
+
+      .nav-link {
+        text-decoration: none;
+        color: var(--main-text);
+        font-weight: 500;
+        padding: 8px 15px;
+        border-radius: 5px;
+        transition: all 0.3s;
+      }
+
+      .nav-link:hover {
+        background-color: var(--section-bg);
+        color: var(--primary-accent);
+      }
+
+      .nav-link.active {
+        background-color: var(--primary-accent);
+        color: white;
+      }
+
+      /* icon */
+      .cart-icon {
+        position: relative;
+        font-size: 1.5rem;
+        color: var(--main-text);
+        cursor: pointer;
+      }
+
+      .cart-count {
+        position: absolute;
+        top: -8px;
+        right: -8px;
+        background-color: var(--primary-accent);
+        color: white;
+        font-size: 0.8rem;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+      }
+      .footer {
+        background-color: var(--header-bg);
+        border-top: 1px solid var(--border-color);
+        padding: 40px 0 20px;
+        margin-top: 50px;
+      }
+
+      .footer-content {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 40px;
+        margin-bottom: 40px;
+      }
+
+      .footer-section {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .footer-title {
+        font-size: 1.8rem;
+        color: var(--primary-accent);
+        margin-bottom: 10px;
+      }
+
+      .footer-text {
+        color: var(--secondary-text);
+        line-height: 1.6;
+      }
+
+      .social-icons {
+        display: flex;
+        gap: 15px;
+        margin-top: 10px;
+      }
+
+      .social-icon {
+        width: 40px;
+        height: 40px;
+        background-color: var(--section-bg);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--main-text);
+        text-decoration: none;
+        font-size: 1.2rem;
+        transition: all 0.3s;
+      }
+
+      .social-icon:hover {
+        background-color: var(--primary-accent);
+        color: white;
+        transform: translateY(-3px);
+      }
+
+      .footer-subtitle {
+        font-size: 1.2rem;
+        margin-bottom: 15px;
+        color: var(--main-text);
+      }
+
+      .footer-links {
+        list-style: none;
+      }
+
+      .footer-links li {
+        margin-bottom: 10px;
+      }
+
+      .footer-links a {
+        color: var(--secondary-text);
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+
+      .footer-links a:hover {
+        color: var(--primary-accent);
+      }
+
+      .contact-info p {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: var(--secondary-text);
+        margin-bottom: 10px;
+        font-size: 0.95rem;
+      }
+
+      .contact-info i {
+        color: var(--primary-accent);
+        width: 20px;
+      }
+
+      .footer-bottom {
+        text-align: center;
+        padding-top: 20px;
+        border-top: 1px solid var(--border-color);
+        color: var(--secondary-text);
+        font-size: 0.9rem;
+      }
+
+      .footer-bottom p {
+        margin-bottom: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <!-- header -->
+      <header class="header">
+        <div class="container">
+          <div class="header-top">
+            <!-- Logo -->
+            <div class="logo">
+              <i class="fas fa-leaf"></i>
+              <span class="logo-text">EcoMart</span>
+            </div>
+
+            <!-- Navigation -->
+            <nav class="nav">
+              <ul class="nav-list">
+                <li><a href="#" class="nav-link active">Home</a></li>
+                <li>
+                  <a href="productpage.html" class="nav-link">Products</a>
+                </li>
+                <li><a href="#" class="nav-link">About Us</a></li>
+                <li><a href="Blog.html" class="nav-link">Blog</a></li>
+                <li><a href="#" class="nav-link">About</a></li>
+              </ul>
+            </nav>
+
+            <!-- Cart Icon -->
+            <div class="cart-icon">
+              <i class="fas fa-shopping-cart"></i>
+              <span class="cart-count">3</span>
+            </div>
+          </div>
+        </div>
+      </header>
+      <!-- parallax section -->
+      <div class="parallaxcenter">
+        <section class="parallax">
+          <img src="../references/bg.png" class="layer bg" />
+          <img src="../references/fg.png" class="layer mid" />
+          <img src="../references/mid.png" class="layer fg" />
+          <h1>Welcome To Eco Mart</h1>
+        </section>
+      </div>
+      <script src="mart2.js"></script>
+      <!-- Secoond page -->
+      <!-- about us section -->
+      <div class="second">
+        <div class="between">
+          <h1>Who We Are</h1>
+        </div>
+        <div class="aboutus">
+          <div>
+            We are a passionate team dedicated to delivering exceptional quality
+            and service. Learn more about our journey and values.
+          </div>
+          <div class="aboutusbutton">
+            <a href="#"><button>Learn More</button></a>
+          </div>
+        </div>
+        <!-- Our products Section -->
+
+        <div class="between">
+          <h1>Our Products</h1>
+        </div>
+        <div class="seemorefix">
+          <div class="wrapper">
+            <div>
+              <div class="item">
+                <img src="../references/example1.png" alt="sdd" />
+              </div>
+            </div>
+            <div>
+              <div class="item">
+                <img src="../references/example4.png" alt="sdd" />
+              </div>
+            </div>
+            <div>
+              <div class="item">
+                <img src="../references/example3.png" alt="sdd" />
+              </div>
+            </div>
+            <div>
+              <div class="item">
+                <img src="../references/phone example" alt="sdd" />
+              </div>
+            </div>
+            <div>
+              <div class="item">
+                <img src="../references/example2.png" alt="sdd" />
+              </div>
+            </div>
+            <div>
+              <div class="item">
+                <img src="../references/laptop.png" alt="sdd" />
+              </div>
+            </div>
+            <script>
+              const wrapper = document.querySelector(".wrapper");
+
+              wrapper.addEventListener("wheel", (event) => {
+                event.preventDefault(); 
+                wrapper.scrollLeft += event.deltaY;
+              });
+            </script>
+          </div>
+          <!--productpage seocopnd-->
+          <div class="seemorediv">
+            <a href="productpage.html">
+              <button type="button" class="seemore">></button>
+            </a>
+          </div>
+        </div>
+        <div class="between2">
+          <h1>Latest Insights</h1>
+        </div>
+        <!--blog-->
+        <div class="insightsbox">
+          <div class="item2">
+            <img src="../references/AboutGreenTechnology.jfif" alt="image1" />
+            <div
+              style="
+                height: 30%;
+                width: 100%;
+                display: flex;
+                flex-wrap: nowrap;
+                gap: 100px;
+              "
+            >
+              <div style="width: 353.1px">About Green Technology</div>
+              <div class="aboutusbutton2">
+                <a href="Blog.html">
+                  <button>Learn more</button>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="item2">
+            <img src="../references/PositiveImpact.jfif" alt="image1" />
+            <div
+              style="
+                height: 30%;
+                width: 100%;
+                display: flex;
+                flex-wrap: nowrap;
+                gap: 100px;
+              "
+            >
+              <div style="width: 353.1px">Positive Impact of Technology</div>
+              <div class="aboutusbutton2">
+                <a href="Blog.html">
+                  <button>Learn more</button>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="item2">
+            <img src="../references/NegativeImpact.jfif" alt="image1" />
+            <div
+              style="
+                height: 30%;
+                width: 100%;
+                display: flex;
+                flex-wrap: nowrap;
+                gap: 100px;
+              "
+            >
+              <div style="width: 353.1px">Negative Impact of Technology</div>
+              <div class="aboutusbutton2">
+                <a href="Blog.html">
+                  <button>Learn more</button>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="item2">
+            <img
+              src="../references/Howtechnologybootssustainableproducts.jfif"
+              alt="image1"
+            />
+            <div
+              style="
+                height: 30%;
+                width: 100%;
+                display: flex;
+                flex-wrap: nowrap;
+                gap: 100px;
+              "
+            >
+              <div style="width: 353.1px">
+                How Technology Boosts Sustainable Product Sales
+              </div>
+              <div class="aboutusbutton2">
+                <a href="Blog.html">
+                  <button>Learn more</button>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="container">
+          <div class="footer-content">
+            <!-- About Section -->
+            <div class="footer-section">
+              <h3 class="footer-title">EcoMart</h3>
+              <p class="footer-text">
+                Your favorite online shopping destination. Quality products at
+                great prices since 2020.
+              </p>
+              <div class="social-icons">
+                <a href="#" class="social-icon">
+                  <i class="fab fa-facebook"></i>
+                </a>
+                <a href="#" class="social-icon">
+                  <i class="fab fa-twitter"></i>
+                </a>
+                <a href="#" class="social-icon">
+                  <i class="fab fa-instagram"></i>
+                </a>
+                <a href="#" class="social-icon">
+                  <i class="fab fa-youtube"></i>
+                </a>
+              </div>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="footer-section">
+              <h4 class="footer-subtitle">Shop By</h4>
+              <ul class="footer-links">
+                <li><a href="#">Electronics</a></li>
+                <li><a href="#">Fashion</a></li>
+                <li><a href="#">Home & Kitchen</a></li>
+                <li><a href="#">Sports</a></li>
+                <li><a href="#">Books</a></li>
+              </ul>
+            </div>
+
+            <!-- Customer Service -->
+            <div class="footer-section">
+              <h4 class="footer-subtitle">Customer Service</h4>
+              <ul class="footer-links">
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">Shipping Policy</a></li>
+                <li><a href="#">Return Policy</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+              </ul>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="footer-section">
+              <h4 class="footer-subtitle">Contact Info</h4>
+              <div class="contact-info">
+                <p>
+                  <i class="fas fa-map-marker-alt"></i> Kandagahro, Kathmandu
+                </p>
+                <p><i class="fas fa-phone"></i> +9779765018127</p>
+                <p><i class="fas fa-envelope"></i> info@ecomart.com</p>
+                <p><i class="fas fa-clock"></i> Mon-Sat: 9AM - 8PM</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Copyright -->
+          <div class="footer-bottom">
+            <p>&copy; 2026 EcoMart. All rights reserved.</p>
+            <p>This is the Home page for learning web development</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

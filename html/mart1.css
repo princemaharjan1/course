@@ -1,0 +1,313 @@
+/* #text section */
+#text {
+  position: absolute;
+  font-size: 45px;
+  color: #333;
+  z-index: 99;
+}
+
+/* about us section */
+.aboutus {
+  height: 10%;
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  color: #388e3c;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+.aboutusbutton button {
+  background-color: #388e3c;
+  height: 40px;
+  width: 100px;
+  border-radius: 40px;
+  font-size: 15px;
+  font-weight: 500;
+  border: 1 solid black;
+}
+.aboutusbutton button:hover {
+  cursor: pointer;
+  color: #4caf50;
+  background-color: #388e3c;
+}
+
+/* second page section */
+.second {
+  background: #121212;
+  height: auto;
+  width: 100vw;
+  padding: 10px;
+}
+.between {
+  margin-bottom: 4%;
+  padding-top: 0px;
+  margin-top: 5%;
+  margin-left: auto;
+  margin-right: auto;
+  height: 50px;
+  width: 300px;
+  text-align: center;
+}
+.between h1 {
+  margin-top: 10%;
+  color: #388e3c;
+  margin-bottom: 10%;
+}
+.between2 {
+  margin-bottom: 5%;
+  padding-top: 0px;
+  margin-top: 4%;
+  margin-left: auto;
+  margin-right: auto;
+  height: 50px;
+  width: 300px;
+  text-align: center;
+}
+.between2 h1 {
+  margin-top: 20%;
+  color: #388e3c;
+  margin-bottom: 20%;
+}
+
+/* wrapper section */
+.wrapper {
+  cursor: pointer;
+  max-height: 300px;
+  border: 1px solid #388e3c;
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  text-align: center;
+  justify-content: space-around;
+  width: 70%;
+  overflow-y: hidden;
+  gap: 40px;
+  margin-left: 15%;
+  transition: transform 0.3s ease, width 0.3s ease, height 0.3s ease;
+}
+.wrapper::-webkit-scrollbar {
+  width: 0;
+}
+.wrapper:active {
+  cursor: grabbing;
+}
+
+.wrapper .item {
+  max-width: 210px;
+  min-width: 210px;
+  max-height: 250px;
+  min-height: 250px;
+  line-height: 300px;
+  text-align: center;
+  background-color: #121212;
+}
+.wrapper .item:hover{
+  transform: scale(1.1);
+}
+.wrapper .item img {
+  max-width: 210px;
+  min-width: 210px;
+  max-height: 190px;
+  min-height: 190px;
+  align-items: center;
+  text-align: center;
+}
+
+/* seemore section */
+.seemorediv {
+  display: flex;
+  justify-content: center;
+  height: 10%;
+}
+.seemorediv2 {
+  display: flex;
+  justify-content: center;
+  height: 5%;
+  justify-content: end;
+  width: 92%;
+  padding: 20px;
+}
+.seemore {
+  height: 30px;
+  width: 30px;
+  border-radius: 100px;
+  background-color: #388e3c;
+  color: white;
+  font-size: 13px;
+  font-weight: bold;
+}
+.seemore2 {
+  height: 30px;
+  width: 30px;
+  border-radius: 100px;
+  background-color: #388e3c;
+  color: white;
+  font-size: 13px;
+  font-weight: bold;
+}
+.seemore:hover {
+  cursor: pointer;
+  color: #4caf50;
+  background-color: #388e3c;
+}
+.seemore2:hover {
+  cursor: pointer;
+  color: #4caf50;
+  background-color: #388e3c;
+}
+.seemorefix {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 0px;
+  align-items: center;
+}
+
+/* default body section */
+body {
+  min-width: 190px;
+}
+
+/* small devices section */
+@media (min-width: 270px) {
+  body,
+  .wrapper,
+  .parallax,
+  .second {
+    min-width: 270px;
+  }
+}
+
+/* medium devices section */
+@media (min-width: 390px) {
+  body,
+  .wrapper,
+  .parallax,
+  .second {
+    min-width: 390px;
+  }
+}
+
+/* large screens section */
+@media (min-width: 1900px) {
+  body,
+  .wrapper,
+  .parallax,
+  .second {
+    min-width: 1900px;
+  }
+}
+
+/* insightsbox section */
+.insightsbox {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  height: auto;
+  width: 1400px;
+  gap: 40px;
+  margin-top: 30px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: auto;
+}
+.item2 {
+  text-align: start;
+  height: 200px;
+  width: 600px;
+  background-color: #1e1e1e;
+  gap: 0px;
+  display: flex;
+  justify-content: start;
+  flex-wrap: wrap;
+  padding-bottom: 0px;
+   transition: transform 0.3s ease, width 0.3s ease, height 0.3s ease;
+}
+.item2:hover{
+   transform: scale(1.1);
+}
+.item2 p {
+  color: #9e9e9e;
+}
+.item2 img {
+  width: 100%;
+  height: 50%;
+  object-fit: cover;
+  object-position: center;
+  align-items: center;
+}
+
+/* layer section */
+.layer {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 1600px;
+  height: 100%;
+  transform: translateX(-50%);
+  object-fit: cover;
+}
+
+/* parallax section */
+.parallax h1 {
+  top: 22%;
+  left: 60%;
+  position: absolute;
+  font-family: "Franklin Gothic Heavy";
+  font-size: 50px;
+  color:white ;
+  text-shadow: 0 0 3px rgba(255, 255, 255, 0.6),
+    0 0 6px rgba(255, 255, 255, 0.5), 0 0 10px rgba(0, 200, 0, 0.4),
+    0 0 15px rgba(0, 200, 0, 0.5);
+  transform: scale(1, 1.1) translate(-40%, 90%);
+}
+.parallax img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* parallaxcenter section */
+.parallaxcenter {
+  display: flex;
+  justify-content: center;
+  margin: 100px;
+}
+
+/* content section */
+.content {
+  height: 150vh;
+  padding: 40px;
+}
+
+/* parallax container section */
+.parallax {
+  position: relative;
+  height: 300px;
+  width: 800px;
+  overflow: hidden;
+}
+
+/* aboutusbutton2 section */
+.aboutusbutton2 button {
+  background-color: #388e3c;
+  height: 40px;
+  width: 100px;
+  border-radius: 40px;
+  font-size: 15px;
+  font-weight: 500;
+  border: 1 solid black;
+  margin-top: 35%;
+  margin-left: 46%;
+}
+.aboutusbutton2 button:hover {
+  cursor: pointer;
+  color: #4caf50;
+  background-color: #388e3c;
+}
