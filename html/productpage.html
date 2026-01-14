@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EcoMart - Products</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="karan.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <div class="container">
+        <div class="header-top">
+          <!-- Logo -->
+          <div class="logo">
+            <i class="fas fa-leaf"></i>
+            <span class="logo-text">EcoMart</span>
+          </div>
+
+          <!-- Navigation -->
+          <nav class="nav">
+            <ul class="nav-list">
+              <li><a href="index.html" class="nav-link">Home</a></li>
+              <li><a href="#" class="nav-link active">Products</a></li>
+              <li><a href="#" class="nav-link">About Us</a></li>
+              <li><a href="Blog.html" class="nav-link">Blog</a></li>
+              <li><a href="#" class="nav-link">About</a></li>
+            </ul>
+          </nav>
+
+          <!-- Cart Icon -->
+          <div class="cart-icon">
+            <i class="fas fa-shopping-cart"></i>
+            <span class="cart-count">3</span>
+          </div>
+        </div>
+
+        <!-- Search Bar -->
+        <div class="search-bar">
+          <input
+            type="text"
+            class="search-input"
+            placeholder="Search for products..."
+          />
+          <button class="search-button">
+            <i class="fas fa-search"></i>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+      <div class="container">
+        <!-- Page Title -->
+        <div class="page-title">
+          <h1>Our Products</h1>
+          <p>Quality products at amazing prices</p>
+        </div>
+
+        <div class="main-content">
+          <!-- Sidebar Filters -->
+          <aside class="sidebar">
+            <div class="filter-box">
+              <h3 class="filter-title">
+                <i class="fas fa-filter"></i>
+                Filter Products
+              </h3>
+
+              <!-- Category Filter -->
+              <div class="filter-group">
+                <h4>Category</h4>
+                <div class="filter-item">
+                  <input type="checkbox" id="cat1" checked />
+                  <label for="cat1">Electronics</label>
+                </div>
+                <div class="filter-item">
+                  <input type="checkbox" id="cat2" />
+                  <label for="cat2">Fashion</label>
+                </div>
+                <div class="filter-item">
+                  <input type="checkbox" id="cat3" />
+                  <label for="cat3">Home & Kitchen</label>
+                </div>
+                <div class="filter-item">
+                  <input type="checkbox" id="cat4" />
+                  <label for="cat4">Sports</label>
+                </div>
+                <div class="filter-item">
+                  <input type="checkbox" id="cat5" />
+                  <label for="cat5">Books</label>
+                </div>
+              </div>
+
+              <!-- Price Filter -->
+              <div class="filter-group">
+                <h4>Price Range</h4>
+                <div class="price-slider-container">
+                  <input
+                    type="range"
+                    min="0"
+                    max="1000"
+                    value="500"
+                    class="price-slider"
+                  />
+                  <div class="price-labels">
+                    <span>$0</span>
+                    <span>$500</span>
+                    <span>$1000+</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Rating Filter -->
+              <div class="filter-group">
+                <h4>Customer Rating</h4>
+                <div class="filter-item">
+                  <input type="radio" name="rating" id="rate5" checked />
+                  <label for="rate5">
+                    <span class="stars">
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                    </span>
+                    5 Stars
+                  </label>
+                </div>
+                <div class="filter-item">
+                  <input type="radio" name="rating" id="rate4" />
+                  <label for="rate4">
+                    <span class="stars">
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="far fa-star"></i>
+                    </span>
+                    4+ Stars
+                  </label>
+                </div>
+                <div class="filter-item">
+                  <input type="radio" name="rating" id="rate3" />
+                  <label for="rate3">
+                    <span class="stars">
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="far fa-star"></i>
+                      <i class="far fa-star"></i>
+                    </span>
+                    3+ Stars
+                  </label>
+                </div>
+              </div>
+
+              <!-- Brand Filter -->
+              <div class="filter-group">
+                <h4>Brand</h4>
+                <div class="filter-item">
+                  <input type="checkbox" id="brand1" />
+                  <label for="brand1">Samsung</label>
+                </div>
+                <div class="filter-item">
+                  <input type="checkbox" id="brand2" />
+                  <label for="brand2">Apple</label>
+                </div>
+                <div class="filter-item">
+                  <input type="checkbox" id="brand3" />
+                  <label for="brand3">Nike</label>
+                </div>
+                <div class="filter-item">
+                  <input type="checkbox" id="brand4" />
+                  <label for="brand4">Adidas</label>
+                </div>
+              </div>
+
+              <!-- Filter Buttons -->
+              <div class="filter-buttons">
+                <button class="apply-btn">
+                  <i class="fas fa-check"></i> Apply Filters
+                </button>
+                <button class="clear-btn">
+                  <i class="fas fa-times"></i> Clear All
+                </button>
+              </div>
+            </div>
+
+            <!-- Quick Categories -->
+            <div class="quick-categories">
+              <h4><i class="fas fa-bolt"></i> Popular Categories</h4>
+              <ul class="category-list">
+                <li>
+                  <a href="#"><i class="fas fa-mobile-alt"></i> Smartphones</a>
+                </li>
+                <li>
+                  <a href="#"><i class="fas fa-laptop"></i> Laptops</a>
+                </li>
+                <li>
+                  <a href="#"><i class="fas fa-tshirt"></i> Men's Fashion</a>
+                </li>
+                <li>
+                  <a href="#"><i class="fas fa-female"></i> Women's Fashion</a>
+                </li>
+                <li>
+                  <a href="#"><i class="fas fa-home"></i> Home Decor</a>
+                </li>
+                <li>
+                  <a href="#"><i class="fas fa-book"></i> Books</a>
+                </li>
+              </ul>
+            </div>
+          </aside>
+
+          <!-- Products Section -->
+          <section class="products-section">
+            <!-- Sorting Options -->
+            <div class="sort-options">
+              <span class="results-count">Showing 24 products</span>
+              <select class="sort-select">
+                <option>Sort by: Popular</option>
+                <option>Price: Low to High</option>
+                <option>Price: High to Low</option>
+                <option>Customer Rating</option>
+                <option>Newest First</option>
+              </select>
+            </div>
+
+            <!-- Products Grid -->
+            <div class="products-grid">
+              <!-- Product 1 -->
+              <div class="product-card">
+                <div class="product-image">
+                  <img
+                    style="height: 180px; width: auto"
+                    src="../references/phone example"
+                    alt="sdd"
+                  />
+                  <span class="badge new">NEW</span>
+                </div>
+                <div class="product-info">
+                  <h3 class="product-name">Smartphone X1 Pro</h3>
+                  <p class="product-desc">
+                    Latest smartphone with amazing camera and battery life.
+                  </p>
+                  <div class="product-rating">
+                    <span class="stars">
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star-half-alt"></i>
+                    </span>
+                    <span class="rating-text">4.5 (128 reviews)</span>
+                  </div>
+                  <div class="product-footer">
+                    <span class="product-price">$499.99</span>
+                    <button class="cart-btn">
+                      <i class="fas fa-cart-plus"></i> Add to Cart
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Product 2 -->
+              <div class="product-card">
+                <div class="product-image">
+                  <img
+                    style="height: 180px; width: auto"
+                    src="../references//plate.png"
+                    alt="sdd"
+                  />
+                  <span class="badge discount">-20%</span>
+                </div>
+                <div class="product-info">
+                  <h3 class="product-name">paper plates</h3>
+                  <p class="product-desc">
+                    easy to dispose and use
+                  </p>
+                  <div class="product-rating">
+                    <span class="stars">
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="far fa-star"></i>
+                    </span>
+                    <span class="rating-text">4.0 (89 reviews)</span>
+                  </div>
+                  <div class="product-footer">
+                    <div class="price-container">
+                      <span class="product-price">Rs.99</span>
+                      <span class="old-price">Rs.200</span>
+                    </div>
+                    <button class="cart-btn">
+                      <i class="fas fa-cart-plus"></i> Add to Cart
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Product 3 -->
+              <div class="product-card">
+                <div class="product-image">
+                  <img
+                    style="height: 180px; width: auto"
+                    src="../references/phone example"
+                    alt="sdd"
+                  />
+                </div>
+                <div class="product-info">
+                  <h3 class="product-name">Wireless Headphones</h3>
+                  <p class="product-desc">
+                    Noise cancelling headphones with great sound quality.
+                  </p>
+                  <div class="product-rating">
+                    <span class="stars">
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                    </span>
+                    <span class="rating-text">5.0 (256 reviews)</span>
+                  </div>
+                  <div class="product-footer">
+                    <span class="product-price">$149.99</span>
+                    <button class="cart-btn">
+                      <i class="fas fa-cart-plus"></i> Add to Cart
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Product 4 -->
+              <div class="product-card">
+                <div class="product-image">
+                  <img
+                    style="height: 180px; width: auto"
+                    src="../references/phone example"
+                    alt="sdd"
+                  />
+                  <span class="badge popular">HOT</span>
+                </div>
+                <div class="product-info">
+                  <h3 class="product-name">Premium Cotton T-Shirt</h3>
+                  <p class="product-desc">
+                    Comfortable cotton t-shirt in various colors.
+                  </p>
+                  <div class="product-rating">
+                    <span class="stars">
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="far fa-star"></i>
+                    </span>
+                    <span class="rating-text">4.0 (67 reviews)</span>
+                  </div>
+                  <div class="product-footer">
+                    <span class="product-price">$24.99</span>
+                    <button class="cart-btn">
+                      <i class="fas fa-cart-plus"></i> Add to Cart
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Product 5 -->
+              <div class="product-card">
+                <div class="product-image">
+                  <img
+                    style="height: 180px; width: auto"
+                    src="../references/phone example"
+                    alt="sdd"
+                  />
+                </div>
+                <div class="product-info">
+                  <h3 class="product-name">Kitchen Blender Pro</h3>
+                  <p class="product-desc">
+                    Powerful blender for smoothies and food preparation.
+                  </p>
+                  <div class="product-rating">
+                    <span class="stars">
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star-half-alt"></i>
+                    </span>
+                    <span class="rating-text">4.5 (142 reviews)</span>
+                  </div>
+                  <div class="product-footer">
+                    <span class="product-price">$89.99</span>
+                    <button class="cart-btn">
+                      <i class="fas fa-cart-plus"></i> Add to Cart
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Product 6 -->
+              <div class="product-card">
+                <div class="product-image">
+                 <img
+                    style="height: 180px; width: auto"
+                    src="../references/phone example"
+                    alt="sdd"
+                  />
+                  <span class="badge new">NEW</span>
+                </div>
+                <div class="product-info">
+                  <h3 class="product-name">Smart Watch 2.0</h3>
+                  <p class="product-desc">
+                    Smart watch with fitness tracker and notifications.
+                  </p>
+                  <div class="product-rating">
+                    <span class="stars">
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                    </span>
+                    <span class="rating-text">5.0 (189 reviews)</span>
+                  </div>
+                  <div class="product-footer">
+                    <span class="product-price">$199.99</span>
+                    <button class="cart-btn">
+                      <i class="fas fa-cart-plus"></i> Add to Cart
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Product 7 -->
+              <div class="product-card">
+                <div class="product-image">
+                  <img
+                    style="height: 180px; width: auto"
+                    src="../references/phone example"
+                    alt="sdd"
+                  />
+                </div>
+                <div class="product-info">
+                  <h3 class="product-name">Programming Book Set</h3>
+                  <p class="product-desc">
+                    Complete web development learning package.
+                  </p>
+                  <div class="product-rating">
+                    <span class="stars">
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="far fa-star"></i>
+                    </span>
+                    <span class="rating-text">4.0 (92 reviews)</span>
+                  </div>
+                  <div class="product-footer">
+                    <span class="product-price">$39.99</span>
+                    <button class="cart-btn">
+                      <i class="fas fa-cart-plus"></i> Add to Cart
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Product 8 -->
+              <div class="product-card">
+                <div class="product-image">
+                 <img
+                    style="height: 180px; width: auto"
+                    src="../references/phone example"
+                    alt="sdd"
+                  />
+                  <span class="badge discount">-15%</span>
+                </div>
+                <div class="product-info">
+                  <h3 class="product-name">Running Shoes Pro</h3>
+                  <p class="product-desc">
+                    Comfortable running shoes for athletes.
+                  </p>
+                  <div class="product-rating">
+                    <span class="stars">
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star-half-alt"></i>
+                    </span>
+                    <span class="rating-text">4.5 (156 reviews)</span>
+                  </div>
+                  <div class="product-footer">
+                    <div class="price-container">
+                      <span class="product-price">$84.99</span>
+                      <span class="old-price">$99.99</span>
+                    </div>
+                    <button class="cart-btn">
+                      <i class="fas fa-cart-plus"></i> Add to Cart
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Product 9 -->
+              <div class="product-card">
+                <div class="product-image">
+                  <img
+                    style="height: 180px; width: auto"
+                    src="../references/phone example"
+                    alt="sdd"
+                  />
+                </div>
+                <div class="product-info">
+                  <h3 class="product-name">DSLR Camera Kit</h3>
+                  <p class="product-desc">Professional camera with lens kit.</p>
+                  <div class="product-rating">
+                    <span class="stars">
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                    </span>
+                    <span class="rating-text">5.0 (203 reviews)</span>
+                  </div>
+                  <div class="product-footer">
+                    <span class="product-price">$699.99</span>
+                    <button class="cart-btn">
+                      <i class="fas fa-cart-plus"></i> Add to Cart
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Product 10 -->
+              <div class="product-card">
+                <div class="product-image">
+                  <img
+                    style="height: 180px; width: auto"
+                    src="../references/phone example"
+                    alt="sdd"
+                  />
+                  <span class="badge new">NEW</span>
+                </div>
+                <div class="product-info">
+                  <h3 class="product-name">Gaming Console</h3>
+                  <p class="product-desc">
+                    Latest gaming console with 2 controllers.
+                  </p>
+                  <div class="product-rating">
+                    <span class="stars">
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="far fa-star"></i>
+                    </span>
+                    <span class="rating-text">4.0 (178 reviews)</span>
+                  </div>
+                  <div class="product-footer">
+                    <span class="product-price">Rs.399.99</span>
+                    <button class="cart-btn">
+                      <i class="fas fa-cart-plus"></i> Add to Cart
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Product 11 -->
+              <div class="product-card">
+                <div class="product-image">
+                  <img
+                    style="height: 180px; width: auto"
+                    src="../references/phone example"
+                    alt="sdd"
+                  />
+                </div>
+                <div class="product-info">
+                  <h3 class="product-name">Eco-Friendly Office Chair</h3>
+                  <p class="product-desc">
+                    Ergonomic office chair for comfort.
+                  </p>
+                  <div class="product-rating">
+                    <span class="stars">
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star-half-alt"></i>
+                    </span>
+                    <span class="rating-text">4.5 (134 reviews)</span>
+                  </div>
+                  <div class="product-footer">
+                    <span class="product-price">Rs.129.99</span>
+                    <button class="cart-btn">
+                      <i class="fas fa-cart-plus"></i> Add to Cart
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Product 12 -->
+              <div class="product-card">
+                <div class="product-image">
+                  <img
+                    style="height: 180px; width: auto"
+                    src="../references/phone example"
+                    alt="sdd"
+                  />
+                  <span class="badge discount">-30%</span>
+                </div>
+                <div class="product-info">
+                  <h3 class="product-name">Solar Power Bank</h3>
+                  <p class="product-desc">
+                    Solar charging power bank for outdoor and reuaseable.
+                  </p>
+                  <div class="product-rating">
+                    <span class="stars">
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="far fa-star"></i>
+                    </span>
+                    <span class="rating-text">4.0 (87 reviews)</span>
+                  </div>
+                  <div class="product-footer">
+                    <div class="price-container">
+                      <span class="product-price">Rs.34.99</span>
+                      <span class="old-price">Rs.49.99</span>
+                    </div>
+                    <button class="cart-btn">
+                      <i class="fas fa-cart-plus"></i> Add to Cart
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Pagination -->
+            <div class="pagination">
+              <button class="page-btn prev-btn">
+                <i class="fas fa-chevron-left"></i> Previous
+              </button>
+              <div class="page-numbers">
+                <button class="page-number active">1</button>
+                <button class="page-number">2</button>
+                <button class="page-number">3</button>
+                <span class="page-dots">...</span>
+                <button class="page-number">10</button>
+              </div>
+              <button class="page-btn next-btn">
+                Next <i class="fas fa-chevron-right"></i>
+              </button>
+            </div>
+          </section>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <!-- About Section -->
+          <div class="footer-section">
+            <h3 class="footer-title">EcoMart</h3>
+            <p class="footer-text">
+              Your favorite online shopping destination. Quality products at
+              great prices since 2020.
+            </p>
+            <div class="social-icons">
+              <a href="#" class="social-icon">
+                <i class="fab fa-facebook"></i>
+              </a>
+              <a href="#" class="social-icon">
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a href="#" class="social-icon">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="#" class="social-icon">
+                <i class="fab fa-youtube"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Quick Links -->
+          <div class="footer-section">
+            <h4 class="footer-subtitle">Shop By</h4>
+            <ul class="footer-links">
+              <li><a href="#">Electronics</a></li>
+              <li><a href="#">Fashion</a></li>
+              <li><a href="#">Home & Kitchen</a></li>
+              <li><a href="#">Sports</a></li>
+              <li><a href="#">Books</a></li>
+            </ul>
+          </div>
+
+          <!-- Customer Service -->
+          <div class="footer-section">
+            <h4 class="footer-subtitle">Customer Service</h4>
+            <ul class="footer-links">
+              <li><a href="#">Contact Us</a></li>
+              <li><a href="#">FAQ</a></li>
+              <li><a href="#">Shipping Policy</a></li>
+              <li><a href="#">Return Policy</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+            </ul>
+          </div>
+
+          <!-- Contact Info -->
+          <div class="footer-section">
+            <h4 class="footer-subtitle">Contact Info</h4>
+            <div class="contact-info">
+              <p><i class="fas fa-map-marker-alt"></i> Kandagahro, Kathmandu</p>
+              <p><i class="fas fa-phone"></i> +9779765018127</p>
+              <p><i class="fas fa-envelope"></i> info@ecomart.com</p>
+              <p><i class="fas fa-clock"></i> Mon-Sat: 9AM - 8PM</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Copyright -->
+        <div class="footer-bottom">
+          <p>&copy; 2026 EcoMart. All rights reserved.</p>
+          <p>This is a product page for learning web development</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
